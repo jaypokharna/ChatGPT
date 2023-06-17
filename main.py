@@ -42,4 +42,6 @@ def qa():
     data = {"result":"Hello! How can I assist you today?"}
     return jsonify(data)
 
-app.run(debug=True)
+
+if __name__ == "__mian__":
+    app.run(debug=False,host='0.0.0.0') 
