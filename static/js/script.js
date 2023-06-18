@@ -1,4 +1,4 @@
-// Example POST method implementation:
+// POST method
 async function postData(url = "", data = {}) {
     const response = await fetch(url, {
         method: "POST", 
@@ -12,7 +12,7 @@ async function postData(url = "", data = {}) {
 
 
 
-// Send button event
+// Send button event Page 1
 sendBtn.addEventListener("click", async() => {
 
     // Fething Question from msgbox
@@ -31,7 +31,7 @@ sendBtn.addEventListener("click", async() => {
     solution.innerHTML = result.answer  
 })
 
-// Send button event
+// Send button event Page 2
 sendBtn2.addEventListener("click", async() => {
 
     // Fething Question from msgbox
@@ -48,38 +48,35 @@ sendBtn2.addEventListener("click", async() => {
 
 })
 
+// Prebuilt questions on first page
 preq1.addEventListener("click", () => {
 
-       document.getElementById("msgboxinput").value =  "Explain quantum computing in simple terms" ;
-   
+    document.getElementById("msgboxinput").value =  "Explain quantum computing in simple terms" ;
 })
-
 preq2.addEventListener("click", () => {
 
     document.getElementById("msgboxinput").value ="Got any creative ideas for a 10 year old’s birthday?";
-
 })
-
 preq3.addEventListener("click", () => {
 
     document.getElementById("msgboxinput").value = "How do I make an HTTP request in Javascript?";
-
 })
 
 
+// Getting chat history
 let buttons = document.querySelectorAll('.chatbtn');
 
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click',async(e)=>{
 
+    // Changing chat gpt window
     document.querySelector(".right2").style.display = "block"
     document.querySelector(".right1").style.display = "none"
     
-
     // Fething Question from msgbox
     chatinput = e.target.innerHTML;
 
-    // Replacing present question with new question
+    // Replacing question
     question.innerHTML = chatinput;
 
     // Getting the solution to answer
@@ -90,8 +87,28 @@ Array.from(buttons).forEach((button) => {
     })
 })
 
+// New chat button event
 newchatbtn.addEventListener("click", () => {
 
    location.reload()
   
 })
+
+
+// For enter key event
+var input = document.getElementById("msgboxinput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("sendBtn").click();
+  }
+});
+
+// For enter key event
+var input = document.getElementById("msgboxinput2");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("sendBtn2").click();
+  }
+});

@@ -1,14 +1,15 @@
 from flask import Flask, render_template , jsonify , request
 from flask_pymongo import PyMongo
-
 import openai
 
-openai.api_key = "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"
+
+openai.api_key = "<API KEY>"
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://cartoon276:jay276@chatgpt.5mqoaz4.mongodb.net/chatGPT"
+app.config["MONGO_URI"] = "<MongoDB Database Connection URI>"
 mongo = PyMongo(app)
 
+# Getting chats history from mongodb database
 @app.route("/")
 def hello_world():
     chats = mongo.db.chats.find({})
@@ -27,6 +28,7 @@ def qa():
             data = {"answer":f"{chat['answer']}"}
             return jsonify(data)
         else :
+            # Obtaining the response from GPT-3.5 OpenAI model
             response = openai.Completion.create(
                 model="text-davinci-003",
                 prompt=question,
@@ -37,11 +39,10 @@ def qa():
                 presence_penalty=0
                 )
             data = {"answer" : response["choices"][0]["text"]}
+            # Storing each QA in mongodb database
             mongo.db.chats.insert_one({"question":question , "answer" : response["choices"][0]["text"]})
             return jsonify(data)
     data = {"result":"Hello! How can I assist you today?"}
     return jsonify(data)
 
-
-if __name__ == "__mian__":
-    app.run(debug=False,host='0.0.0.0') 
+app.run(debug=True)
