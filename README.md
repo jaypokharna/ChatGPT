@@ -62,11 +62,12 @@ You can get others at - https://platform.openai.com/playground
 Please note that the performance of the chatbot depends on the underlying `GPT-3.5 model` and your `API key` limitations. Ensure that you have an active and valid API key to use this project effectively.
 
 
-
-
 ## Screenshots
 
 ![App Screenshot](/static/images/snapshot.gif)
+
+![Untitled design](https://github.com/jaypokharna/ChatGPT/assets/105444251/f3e07217-3f5b-4e22-bd9d-c1c851bf563f)
+
 
 ## Customizations
 
