@@ -64,7 +64,7 @@ Please note that the performance of the chatbot depends on the underlying `GPT-3
 
 ## Screenshots
 
-![[App Screenshot](https://github.com/jaypokharna/ChatGPT/assets/105444251/f3e07217-3f5b-4e22-bd9d-c1c851bf563f)
+![App Screenshot](https://github.com/jaypokharna/ChatGPT/assets/105444251/f3e07217-3f5b-4e22-bd9d-c1c851bf563f)
 
 ## Customizations
 
