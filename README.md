@@ -78,7 +78,7 @@ You can customize the behavior of the ChatGPT Clone project to suit your specifi
 
 Feel free to explore the code and experiment with different customization options to enhance the chatbot's performance and capabilities.
 
-## Contributing
+## Contribution
 
 Contributions to the `ChatGPT Clone` project are welcome! If you find any issues or have ideas for improvements, please open an issue or submit a pull request. Make sure to follow the existing code of conduct and conventions when contributing.
 
